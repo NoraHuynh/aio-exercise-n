@@ -46,3 +46,45 @@ $$cosh(x) \approx \sum_{n=0}^{\infty} \frac{x^{2n}}{(2n)!} = 1 + \frac{x^2}{2!} 
 
 #### 5. Mean Difference of ${n^{th}}$ Root Error
 $$MDnRE = \frac{1}{m}\sum_{i=1}^{m}(\sqrt[n]{y_i}-\sqrt[n]{\hat{y_i}})^{p}$$
+
+### Week 02
+#### 1. Sliding Window Maximum
+
+* **Input**: num_list = [3, 4, 5, 1, -44, 5, 10, 12, 33, 1], k = 3
+* **Output**: [5, 5, 5, 5, 10, 12, 33, 33]
+* **Explanation**: 
+
+Window position             |   Max
+-|-
+**[3 4 5]** 1 -44 5 10 12 33 1  |    5
+3 **[4 5 1]** -44 5 10 12 33 1  |    5
+3 4 **[5 1 -44]** 5 10 12 33 1  |    5
+3 4 5 **[1 -44 5]** 10 12 33 1  |    5
+3 4 5 1 **[-44 5 10]** 12 33 1  |    10
+3 4 5 1 -44 **[5 10 12]** 33 1  |    12
+3 4 5 1 -44 5 **[10 12 33]** 1  |    33
+3 4 5 1 -44 5 10 **[12 33 1]**  |    33
+
+#### 2. Occurrences of characters
+* **Input**: one word [a-z][A-Z] 
+* **Output**: a dictionary that counts the occurrences of characters
+
+#### 3. Occurrences of words
+
+* **Input**: path to the txt file 
+* **Output**: dictionary that counts the occurrences of each word
+
+#### 4. Levenshtein distance
+$$
+lev(a,b) = \begin{cases}
+              |a| & if |b| = 0, \\
+              |b| & if |a| = 0, \\
+              lev(tail(a),tail(b)) & if head(a) = head(b),\\
+              1 + min
+              \begin{cases}
+                lev(tail(a),b) \\
+                lev(a,tail(b)) \\
+                lev(tail(a),tail(b))
+              \end{cases} & otherwise &
+          \end{cases}
+$$
