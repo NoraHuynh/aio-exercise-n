@@ -5,7 +5,7 @@ def load_vocab(file_path):
     return words
 
 
-vocabs = load_vocab(file_path="Module1/Week4/word-correction/vocab.txt")
+vocabs = load_vocab(file_path="vocab.txt")
 
 
 def levenshtein_distance(token1, token2):
